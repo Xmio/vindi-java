@@ -1,5 +1,7 @@
 package com.vindi.responses;
 
+import java.io.Serializable;
+
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import com.vindi.model.Customer;
@@ -14,9 +16,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CustomerResponse extends Customer {
+public class CustomerResponse implements Serializable {
 
 	private static final long serialVersionUID = 3177100649907218908L;
-	private Integer id;
+	private Customer customer;
 
 }
