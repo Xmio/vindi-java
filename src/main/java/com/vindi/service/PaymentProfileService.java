@@ -18,15 +18,15 @@ public class PaymentProfileService {
 		this.vindi = vindiConfiguration;
 	}
 
-	public String setDefault(String customerId, PaymentProfile paymentProfile) throws VindiException {
-		Response response = this.vindi.getNewClient().target(String.format(DEFAULT_PAYMENT_URL, customerId)).request()
+	public PaymentProfile setDefault(PaymentProfile paymentProfile) throws VindiException {
+		Response response = this.vindi.getNewClient().target(DEFAULT_PAYMENT_URL).request()
 				.post(Entity.entity(paymentProfile, APPLICATION_JSON));
 
 		int ResponseStatus = response.getStatus();
 		String ResponseText = null;
 
 		if (ResponseStatus == 201)
-			return response.readEntity(String.class);
+			return response.readEntity(PaymentProfile.class);
 
 		if (response.hasEntity())
 			ResponseText = response.readEntity(String.class);
