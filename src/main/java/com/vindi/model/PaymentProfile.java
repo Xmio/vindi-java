@@ -6,7 +6,6 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,7 +23,7 @@ public class PaymentProfile implements Serializable {
 	private String gatewayToken;
 
 	@JsonProperty("customer_id")
-	private Data customerId;
+	private Integer customerId;
 
 	@JsonProperty("payment_method_code")
 	private String paymentMethodCode;
