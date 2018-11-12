@@ -8,6 +8,7 @@ import javax.ws.rs.core.Response;
 import com.vindi.VindiConfiguration;
 import com.vindi.exception.VindiException;
 import com.vindi.model.Customer;
+import com.vindi.responses.CustomerResponse;
 
 public class CustomerService {
 
@@ -18,7 +19,7 @@ public class CustomerService {
 		this.vindi = vindiConfiguration;
 	}
 
-	public Customer create(Customer customer) throws VindiException {
+	public CustomerResponse create(Customer customer) throws VindiException {
 		Response response = this.vindi.getNewClient().target(CREATE_URL).request()
 				.post(Entity.entity(customer, APPLICATION_JSON));
 
@@ -26,7 +27,7 @@ public class CustomerService {
 		String ResponseText = null;
 
 		if (ResponseStatus == 201)
-			return response.readEntity(Customer.class);
+			return response.readEntity(CustomerResponse.class);
 
 		if (response.hasEntity())
 			ResponseText = response.readEntity(String.class);
