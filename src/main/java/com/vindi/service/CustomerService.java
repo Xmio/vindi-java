@@ -25,7 +25,7 @@ public class CustomerService {
 		int ResponseStatus = response.getStatus();
 		String ResponseText = null;
 
-		if (ResponseStatus == 200)
+		if (ResponseStatus == 201)
 			return response.readEntity(CustomerResponse.class);
 
 		if (response.hasEntity())
