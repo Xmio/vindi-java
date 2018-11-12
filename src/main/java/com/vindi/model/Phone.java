@@ -2,6 +2,7 @@ package com.vindi.model;
 
 import java.io.Serializable;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import lombok.AllArgsConstructor;
@@ -15,9 +16,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Phone implements Serializable {
 
 	private static final long serialVersionUID = 6171270942949330398L;
+
+	private Integer id;
 
 	@JsonProperty("phone_type")
 	private String phoneType;

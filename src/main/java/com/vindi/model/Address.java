@@ -2,6 +2,7 @@ package com.vindi.model;
 
 import java.io.Serializable;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import lombok.AllArgsConstructor;
@@ -15,6 +16,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Address implements Serializable {
 	private static final long serialVersionUID = 4749413127967164387L;
 
