@@ -1,7 +1,8 @@
 package com.vindi.service;
 
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+
 import javax.ws.rs.client.Entity;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.vindi.VindiConfiguration;
@@ -20,7 +21,7 @@ public class CustomerService {
 
 	public CustomerResponse create(Customer customer) throws VindiException {
 		Response response = this.vindi.getNewClient().target(CREATE_URL).request()
-				.post(Entity.entity(customer, MediaType.APPLICATION_JSON));
+				.post(Entity.entity(customer, APPLICATION_JSON));
 
 		int ResponseStatus = response.getStatus();
 		String ResponseText = null;
