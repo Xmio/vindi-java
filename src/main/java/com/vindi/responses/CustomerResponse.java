@@ -14,6 +14,6 @@ import lombok.Setter;
 public class CustomerResponse extends Customer {
 
 	private static final long serialVersionUID = 3177100649907218908L;
-	private Integer id;
+	private Customer customer;
 
 }
