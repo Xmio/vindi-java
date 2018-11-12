@@ -19,7 +19,7 @@ public class SubscriptionService {
 		this.vindi = vindiConfiguration;
 	}
 
-	public SubscriptionResponse setDefault(Subscription subscription) throws VindiException {
+	public SubscriptionResponse subscribe(Subscription subscription) throws VindiException {
 		Response response = this.vindi.getNewClient().target(DEFAULT_PAYMENT_URL).request()
 				.post(Entity.entity(subscription, APPLICATION_JSON));
 

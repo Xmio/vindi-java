@@ -18,7 +18,7 @@ public class PaymentProfileService {
 		this.vindi = vindiConfiguration;
 	}
 
-	public PaymentProfile setDefault(PaymentProfile paymentProfile) throws VindiException {
+	public PaymentProfile setPaymentProfile(PaymentProfile paymentProfile) throws VindiException {
 		Response response = this.vindi.getNewClient().target(DEFAULT_PAYMENT_URL).request()
 				.post(Entity.entity(paymentProfile, APPLICATION_JSON));
 
