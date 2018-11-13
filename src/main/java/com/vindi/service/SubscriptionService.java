@@ -13,14 +13,14 @@ import com.vindi.responses.SubscriptionResponse;
 public class SubscriptionService {
 
 	private VindiConfiguration vindi;
-	private final String DEFAULT_PAYMENT_URL = VindiConfiguration.url("/subscriptions");
+	private final String DEFAULT_SUBSCRIPTION_URL = VindiConfiguration.url("/subscriptions");
 
 	public SubscriptionService(VindiConfiguration vindiConfiguration) {
 		this.vindi = vindiConfiguration;
 	}
 
 	public SubscriptionResponse subscribe(Subscription subscription) throws VindiException {
-		Response response = this.vindi.getNewClient().target(DEFAULT_PAYMENT_URL).request()
+		Response response = this.vindi.getNewClient().target(DEFAULT_SUBSCRIPTION_URL).request()
 				.post(Entity.entity(subscription, APPLICATION_JSON));
 
 		int ResponseStatus = response.getStatus();
@@ -34,6 +34,6 @@ public class SubscriptionService {
 
 		response.close();
 
-		throw new VindiException("Error set subscription!", ResponseStatus, ResponseText);
+		throw new VindiException("Error setting subscription!", ResponseStatus, ResponseText);
 	}
 }

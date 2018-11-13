@@ -33,6 +33,6 @@ public class PaymentProfileService {
 
 		response.close();
 
-		throw new VindiException("Error set payment profile!", ResponseStatus, ResponseText);
+		throw new VindiException("Error setting payment profile!", ResponseStatus, ResponseText);
 	}
 }
