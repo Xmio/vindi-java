@@ -24,6 +24,6 @@ public class BillItem implements Serializable {
 	@JsonProperty("product_id")
 	private Integer productId;
 
-	private Integer amount;
+	private Double amount;
 
 }
