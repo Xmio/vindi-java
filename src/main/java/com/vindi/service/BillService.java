@@ -19,7 +19,7 @@ public class BillService {
 		this.vindi = vindiConfiguration;
 	}
 
-	public BillResponse subscribe(Bill bill) throws VindiException {
+	public BillResponse charge(Bill bill) throws VindiException {
 		Response response = this.vindi.getNewClient().target(DEFAULT_BILL_URL).request()
 				.post(Entity.entity(bill, APPLICATION_JSON));
 
