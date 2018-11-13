@@ -22,6 +22,8 @@ public class Bill implements Serializable {
 
 	private static final long serialVersionUID = 6133950427300254390L;
 
+	private Integer id;
+
 	@JsonProperty("customer_id")
 	private Integer customerId;
 
