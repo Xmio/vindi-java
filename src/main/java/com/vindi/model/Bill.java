@@ -33,4 +33,6 @@ public class Bill implements Serializable {
 	@JsonProperty("bill_items")
 	private List<BillItem> billItems;
 
+	private String status;
+
 }

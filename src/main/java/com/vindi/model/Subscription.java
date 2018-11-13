@@ -32,4 +32,6 @@ public class Subscription implements Serializable {
 	@JsonProperty("payment_method_code")
 	private String paymentMethodCode;
 
+	private Bill bill;
+
 }
