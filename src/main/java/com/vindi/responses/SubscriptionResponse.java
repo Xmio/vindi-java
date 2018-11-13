@@ -5,6 +5,7 @@ import java.io.Serializable;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import com.vindi.model.Bill;
 import com.vindi.model.Subscription;
 
 import lombok.AllArgsConstructor;
@@ -22,5 +23,7 @@ public class SubscriptionResponse implements Serializable {
 
 	@JsonProperty("subscription")
 	private Subscription subscription;
+
+	private Bill bill;
 
 }
